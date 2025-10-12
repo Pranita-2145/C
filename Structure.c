@@ -37,24 +37,27 @@ void main(){
 
     //Structure using pointer
     struct Student *s;
+    int n;
+    printf("Enter value of n: \n");
+    scanf("%d",&n);
 
-    s = (struct Student *)calloc(1,sizeof(struct Student));
+    s = (struct Student *)calloc(n,sizeof(struct Student));
     int i;
 
-    for(i=0; i<5; i++){
+    for(i=0; i<n; i++){
         printf("Enter rollno:\n");
-        scanf("%d",&(s->rollno));
+        scanf("%d",&((s+i)->rollno));
         printf("Enter name:\n");
-        scanf("%s",s->name);
+        scanf("%s",(s+i)->name);
         printf("Enter Div:\n");
-        scanf("%s",s->div);
+        scanf("%s",(s+i)->div);
 
     }
 
-    for(i=0; i<5;i++){
-      printf("Rollno of Student: %d\t",&(s->rollno));  
-      printf("Names of Student: %s\t",s->name);
-      printf("Div of student: %s\t",s->div);
+    for(i=0; i<n;i++){
+      printf("Rollno of Student: %d\t",&((s+i)->rollno));  
+      printf("Names of Student: %s\t",(s+i)->name);
+      printf("Div of student: %s\t",(s+i)->div);
     }
       
 }
