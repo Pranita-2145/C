@@ -28,7 +28,7 @@ int main(){
     printf("%d\n", *p);
     */
 
-    //Call by ref
+    //Call by reference
     int a =10;
     printf("Value of a before: %d\n",a);
     change(&a);
